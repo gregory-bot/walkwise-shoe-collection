@@ -20,7 +20,7 @@ function App() {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/service/:id" element={<ServiceDetails />} />
+            <Route path="/services/:id" element={<ServiceDetails />} />
           </Routes>
         </div>
       </CartProvider>

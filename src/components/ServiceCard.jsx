@@ -18,8 +18,8 @@ function ServiceCard({ service }) {
         <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
         <p className="text-gray-600 text-sm mb-4">{service.description}</p>
         <Link
-          to={`/service/${service.id}`}
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
+          to={`/services/${service.id}`}
+          className="inline-block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
         >
           check out more
         </Link>

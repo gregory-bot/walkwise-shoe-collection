@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "https://m.media-amazon.com/images/I/61QIPDZm+QL._AC_SX300_SY300_.jpg",
-  "https://m.media-amazon.com/images/I/61YqLa6M-xL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
-  "https://m.media-amazon.com/images/I/718sO7OZO1L.__AC_SX300_SY300_QL70_FMwebp_.jpg",
-  "https://images.pexels.com/photos/3550484/pexels-photo-3550484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  "https://i.postimg.cc/TPCxV8cf/jkuat.jpg",
+  "https://i.postimg.cc/mkVn6njR/samba.jpg",
+  "https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 ];
 
 function AboutUs() {
@@ -14,8 +14,16 @@ function AboutUs() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 8000); // Change image every 8 seconds
+    }, 9000); // Change image every 9 seconds
     return () => clearInterval(interval);
+  }, []);
+
+  // Preload images
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   return (
@@ -29,12 +37,12 @@ function AboutUs() {
               <motion.img
                 key={index}
                 src={images[index]}
-                alt="Jengi Laptops Workshop"
+                alt="Walkwise shoe store"
                 className="absolute inset-0 w-full h-full object-cover rounded-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                transition={{ duration: 2.5, ease: "easeInOut" }} // Increased duration for smoother transition
               />
             </AnimatePresence>
             <div className="absolute inset-0 bg-black bg-opacity-20 rounded-lg"></div>
@@ -42,9 +50,9 @@ function AboutUs() {
 
           {/* About Us Content */}
           <div>
-            <h2 className="text-3xl font-bold mb-6">About crystalchip computers and network services</h2>
-            <p className="text-gray-600 mb-6">
-            At crystalchip computers and network services, we’re your trusted partner for all things tech. With years of experience, our expert team offers top-notch repairs, high-quality new and refurbished computers, and reliable network services to keep you connected and productive.
+            <h2 className="text-3xl text-blue-600 font-bold mb-6">about Walkwise Shoe Store Services</h2>
+            <p className="text-green-600 mb-6">
+              At Walkwise, we’re your go-to destination for premium footwear. With a passion for quality and style, we offer a wide range of shoes for men, women, and kids, ensuring comfort, durability, and the latest trends for every step of your journey.
             </p>
 
             {/* Google Maps Embed */}

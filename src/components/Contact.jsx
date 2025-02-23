@@ -51,7 +51,7 @@ const Contact = () => {
     <section id="contact" className="bg-gray-50 py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Contact Us</h2>
+          <h2 className="text-4xl font-bold text-red-600 text-center mb-12">Contact Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <div className="bg-white rounded-lg shadow-md p-8">
@@ -61,8 +61,8 @@ const Contact = () => {
                     <Mail className="text-blue-600 w-6 h-6" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <a href="mailto:sales@crystalchip-limited.co.ke" className="text-gray-600 hover:text-blue-600">
-                      sales@crystalchip-limited.co.ke
+                      <a href="kipngenogregory@gmail.com" className="text-gray-600 hover:text-blue-600">
+                      kipngenogregory@gmail.com
                       </a>
                     </div>
                   </div>
@@ -70,8 +70,8 @@ const Contact = () => {
                     <Phone className="text-blue-600 w-6 h-6" />
                     <div>
                       <p className="font-medium">phone</p>
-                      <a href="tel:+254724885343" className="text-gray-600 hover:text-blue-600">
-                      +254724885343
+                      <a href="tel:+254748163492" className="text-gray-600 hover:text-blue-600">
+                      +254748163492
                       </a>
                     </div>
                   </div>
@@ -80,7 +80,7 @@ const Contact = () => {
                     <div>
                       <p className="font-medium">address</p>
                       <p className="text-gray-600">
-                        crystalchip computers and networks Jengi House, Nairobi, Kenya
+                        Walkwise shoe center, Nairobi, Kenya
                       </p>
                     </div>
                   </div>
@@ -106,7 +106,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-8">
                 <div className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-purple-600 mb-1">
                       name
                     </label>
                     <input
@@ -120,7 +120,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-purple-600 mb-1">
                       email
                     </label>
                     <input
@@ -134,7 +134,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-purple-600 mb-1">
                       message
                     </label>
                     <textarea

@@ -62,13 +62,13 @@ function Hero() {
         </div>
 
         {/* Typewriter Effect */}
-        <div className="text-4xl md:text-6xl mb-12 text-center">
+        <div className="text-2xl md:text-6xl mb-12 text-center" style={{ fontFamily: 'Courier New, monospace' }}>
           <Typewriter
             options={{
               strings: [
-                "Step into comfort with WalkWise",
-                "Premium footwear for every occasion",
-                "Find your perfect pair today",
+                "step into comfort with WalkWise",
+                "premium footwear for every occasion",
+                "find your perfect pair today",
               ],
               autoStart: true,
               loop: true,

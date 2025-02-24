@@ -5,14 +5,14 @@ const services = [
     id: 1,
     title: 'Men\'s Sneakers',
     description: 'Stylish and comfortable sneakers for men',
-    image: 'https://i.postimg.cc/mkVn6njR/samba.jpg',
+    image: 'https://m.media-amazon.com/images/I/81vhAqO59zL._AC_SX500_.jpg',
     price: true
   },
   {
     id: 2,
     title: 'Women\'s Heels',
     description: 'Elegant and fashionable heels for women',
-    image: 'https://m.media-amazon.com/images/I/514FX9sndaL._AC_SY500_.jpg',
+    image: 'https://m.media-amazon.com/images/I/61RJF1rYoLL._AC_SY500_.jpg',
     price: true
   },
   {
@@ -68,7 +68,7 @@ const services = [
     id: 10,
     title: 'Custom Shoes',
     description: 'Personalized shoes made to order',
-    image: 'https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'https://m.media-amazon.com/images/I/71PZufzlWUL._AC_SY500_.jpg',
     price: true
   },
 ];

@@ -41,8 +41,8 @@ function Navbar() {
           <div className="flex items-center">
             <img src="https://i.postimg.cc/gkCftp2m/free-photo-of-pair-of-brand-sneakers-removebg-preview.png" alt="walkwise shoe store" className="h-14 w-14 mr-2" />
             <Link to="/" className="text-xl">
-  <span className="text-blue-500">WalkWise shoe store</span>
-</Link>
+              <span className="text-blue-500">WalkWise shoe store</span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -76,7 +76,7 @@ function Navbar() {
             </button>
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="p-2 bg-yellow-400 rounded-full w-10 h-10 flex items-center justify-center"
+              className="p-2 bg-green-600 rounded-full w-10 h-10 flex items-center justify-center"
             >
               {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
@@ -87,9 +87,10 @@ function Navbar() {
       {/* Mobile Navigation - Left Side */}
       {isMobile && (
         <div
-          className={`fixed top-0 left-0 h-full w-64 bg-yellow-400 transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 left-0 h-full w-64 bg-orange-400 transform transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
           } z-50 mobile-menu`}
+          style={{ width: '230px' }}
         >
           <div className="flex flex-col items-start p-6 space-y-6">
             <button 

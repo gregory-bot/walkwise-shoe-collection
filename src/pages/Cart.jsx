@@ -6,21 +6,21 @@ function Cart() {
   const total = cartItems.reduce((sum, item) => sum + (item.price || 0), 0);
 
   const handleWhatsAppOrder = () => {
-    const message = `Hi🙂 I would like to order the following items from crystalchip:\n\n${cartItems
-      .map((item) => `${item.title} - $${item.price}`)
-      .join('\n')}\n\nTotal: $${total.toFixed(2)}`;
+    const message = `Hi🙂 I would like to order the following items from Walkwise:\n\n${cartItems
+      .map((item) => `${item.title} - KSH ${item.price} (Size: ${item.size}, Color: ${item.color})`)
+      .join('\n')}\n\nTotal: KSH ${total.toFixed(2)}`;
     
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/254724885343?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/254748163492?text=${encodedMessage}`, '_blank');
   };
 
   const handleEmailOrder = () => {
     const subject = 'New Order from Jengi Laptops';
     const body = `Order Details:\n\n${cartItems
-      .map((item) => `${item.title} - $${item.price}`)
-      .join('\n')}\n\nTotal: $${total.toFixed(2)}`;
+      .map((item) => `${item.title} - KSH ${item.price} (Size: ${item.size}, Color: ${item.color})`)
+      .join('\n')}\n\nTotal: KSH ${total.toFixed(2)}`;
     
-    window.location.href = `mailto:sales@crystalchip-limited.co.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:kipngenogregory@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -35,22 +35,24 @@ function Cart() {
         ) : (
           <div className="bg-white rounded-lg shadow-lg p-6">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex items-center justify-between py-4 border-b">
-                <div className="flex items-center">
+              <div key={item.id} className="flex flex-col items-center py-4 border-b">
+                <div className="relative w-32 h-32 mb-4">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-16 h-16 object-cover rounded"
+                    className="absolute top-0 left-0 w-full h-full object-contain rounded"
                   />
-                  <div className="ml-4">
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                    <p className="text-lg font-bold mt-1">${item.price}</p>
-                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-semibold">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-sm text-blue-600">Size: {item.size}</p>
+                  <p className="text-sm text-blue-600">Color: {item.color}</p>
+                  <p className="text-lg font-bold mt-1">KSH {item.price}</p>
                 </div>
                 <button
-                  onClick={() => removeFromCart(item.id)}
-                  className="text-red-600 hover:text-red-800"
+                  onClick={() => removeFromCart(item.id, item.size, item.color)}
+                  className="mt-4 bg-red-600 hover:bg-red-800 text-white px-3 py-1 rounded text-sm"
                 >
                   Remove
                 </button>
@@ -60,7 +62,7 @@ function Cart() {
             <div className="mt-6 pt-6 border-t">
               <div className="flex justify-between items-center mb-6">
                 <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold">${total.toFixed(2)}</span>
+                <span className="text-2xl font-bold">KSH {total.toFixed(2)}</span>
               </div>
               
               <div className="space-y-4">

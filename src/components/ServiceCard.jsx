@@ -7,19 +7,19 @@ function ServiceCard({ service }) {
       whileHover={{ scale: 1.05 }}
       className="bg-white rounded-lg shadow-lg overflow-hidden w-full"
     >
-      <div className="aspect-w-16 aspect-h-9">
+      <div className="relative overflow-hidden" style={{ paddingBottom: '56.25%' }}>
         <img
           src={service.image}
           alt={service.title}
-          className="w-full h-48 object-cover"
+          className="absolute top-0 left-0 w-full h-full object-contain transform transition-transform duration-500 hover:scale-110"
         />
       </div>
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-        <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+        <p className="text-green-600 text-sm mb-4">{service.description}</p>
         <Link
           to={`/services/${service.id}`}
-          className="inline-block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
+          className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
         >
           check out more
         </Link>

@@ -7,7 +7,7 @@ function Cart() {
 
   const handleWhatsAppOrder = () => {
     const message = `Hi🙂 I would like to order the following items from Walkwise:\n\n${cartItems
-      .map((item) => `${item.title} - KSH ${item.price} (Size: ${item.size}, Color: ${item.color})`)
+      .map((item) => `${item.title} - KSH ${item.price} (Size: ${item.size}, Color: ${item.color}, Rating: ${item.rating})`)
       .join('\n')}\n\nTotal: KSH ${total.toFixed(2)}`;
     
     const encodedMessage = encodeURIComponent(message);
@@ -17,7 +17,7 @@ function Cart() {
   const handleEmailOrder = () => {
     const subject = 'New Order from Jengi Laptops';
     const body = `Order Details:\n\n${cartItems
-      .map((item) => `${item.title} - KSH ${item.price} (Size: ${item.size}, Color: ${item.color})`)
+      .map((item) => `${item.title} - KSH ${item.price} (Size: ${item.size}, Color: ${item.color}, Rating: ${item.rating})`)
       .join('\n')}\n\nTotal: KSH ${total.toFixed(2)}`;
     
     window.location.href = `mailto:kipngenogregory@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -48,6 +48,7 @@ function Cart() {
                   <p className="text-gray-600">{item.description}</p>
                   <p className="text-sm text-blue-600">Size: {item.size}</p>
                   <p className="text-sm text-blue-600">Color: {item.color}</p>
+                  <p className="text-sm text-pink-600">Rating: {item.rating}</p>
                   <p className="text-lg font-bold mt-1">KSH {item.price}</p>
                 </div>
                 <button

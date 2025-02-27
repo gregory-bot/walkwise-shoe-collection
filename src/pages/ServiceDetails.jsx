@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-
+import ReactStars from 'react-rating-stars-component';
 const mensShoes = [
   {
     id: 'ms1',
@@ -1456,12 +1456,13 @@ function ServiceDetails() {
 
   const serviceItems = getServiceItems(id);
 
-  // Function to handle adding an item to the cart with selected size and color
-  const handleAddToCart = (item, selectedSize, selectedColor) => {
+  // Function to handle adding an item to the cart with selected size, color, and rating
+  const handleAddToCart = (item, selectedSize, selectedColor, rating) => {
     const itemWithDetails = {
       ...item,
       size: selectedSize,
       color: selectedColor,
+      rating: rating,
     };
     addToCart(itemWithDetails);
   };
@@ -1480,6 +1481,11 @@ function ServiceDetails() {
           {serviceItems.map((item) => {
             const [selectedSize, setSelectedSize] = useState('');
             const [selectedColor, setSelectedColor] = useState('');
+            const [rating, setRating] = useState(0);
+
+            const ratingChanged = (newRating) => {
+              setRating(newRating);
+            };
 
             return (
               <div key={item.id} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-xs">
@@ -1506,6 +1512,10 @@ function ServiceDetails() {
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
                     >
                       <option value="">Select size</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
                       <option value="6">6</option>
                       <option value="7">7</option>
                       <option value="8">8</option>
@@ -1534,12 +1544,25 @@ function ServiceDetails() {
                     </select>
                   </div>
 
+                  {/* Rating Section */}
+                  <div className="mb-2">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Rate
+                    </label>
+                    <ReactStars
+                      count={5}
+                      onChange={ratingChanged}
+                      size={24}
+                      activeColor="#ff0000"
+                    />
+                  </div>
+
                   <div className="flex justify-between items-center">
                     <span className="text-blue-600 font-bold text-lg">KSH {item.price}</span>
                     <button
-                      onClick={() => handleAddToCart(item, selectedSize, selectedColor)}
+                      onClick={() => handleAddToCart(item, selectedSize, selectedColor, rating)}
                       className="bg-yellow-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
-                      disabled={!selectedSize || !selectedColor} // Disable button if size or color is not selected
+                      disabled={!selectedSize || !selectedColor}
                     >
                       Add to Cart
                     </button>

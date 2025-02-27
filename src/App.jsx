@@ -7,6 +7,7 @@ import Cart from './pages/Cart';
 import ServiceDetails from './pages/ServiceDetails';
 import { CartProvider } from './context/CartContext';
 import AboutUs from './components/AboutUs';
+import OffersPage from './pages/OffersPage'; // Correct import path
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/offers" element={<OffersPage />} /> {/* Corrected to use element prop */}
             <Route path="/services/:id" element={<ServiceDetails />} />
           </Routes>
         </div>

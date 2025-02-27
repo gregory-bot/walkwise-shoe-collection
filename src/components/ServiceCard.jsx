@@ -19,7 +19,7 @@ function ServiceCard({ service }) {
         <p className="text-green-600 text-sm mb-4">{service.description}</p>
         <Link
           to={`/services/${service.id}`}
-          className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
+          className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm" style={{ fontFamily: 'Courier New, monospace' }}
         >
           check out more
         </Link>

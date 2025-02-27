@@ -51,6 +51,7 @@ function Navbar() {
             <Link to="/services" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Services</Link>
             <Link to="/aboutus" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>AboutUs</Link>
             <Link to="/contact" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Contact</Link>
+            <Link to="/offers" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Offers</Link> {/* Added Offers link */}
             <Link to="/cart" className="relative">
               <FiShoppingCart className="h-6 w-6" />
               {cartItems.length > 0 && (
@@ -117,6 +118,12 @@ function Navbar() {
             >
               Contact
             </button>
+            <button 
+              onClick={() => handleNavigation('/offers')} 
+              className="nav-link"
+            >
+              Offers
+            </button> {/* Added Offers link */}
           </div>
         </div>
       )}

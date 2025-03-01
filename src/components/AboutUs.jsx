@@ -1,29 +1,24 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const images = [
   "https://i.postimg.cc/TPCxV8cf/jkuat.jpg",
   "https://i.postimg.cc/mkVn6njR/samba.jpg",
-  "https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://images.pexels.com/photos/293404/pexels-photo-293404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   "https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 ];
 
 function AboutUs() {
   const [index, setIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setNextIndex((prevNextIndex) => (prevNextIndex + 1) % images.length);
     }, 9000); // Change image every 9 seconds
-    return () => clearInterval(interval);
-  }, []);
 
-  // Preload images
-  useEffect(() => {
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -31,26 +26,26 @@ function AboutUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
-          {/* Image Carousel */}
+          {/* Smooth Image Carousel */}
           <div className="relative w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
-            <AnimatePresence mode="wait">
+            {images.map((img, imgIndex) => (
               <motion.img
-                key={index}
-                src={images[index]}
+                key={imgIndex}
+                src={img}
                 alt="Walkwise shoe store"
                 className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 2.5, ease: "easeInOut" }} // Increased duration for smoother transition
+                style={{ position: "absolute", top: 0, left: 0 }}
+                initial={{ opacity: imgIndex === index ? 1 : 0 }}
+                animate={{ opacity: imgIndex === index ? 1 : 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
               />
-            </AnimatePresence>
+            ))}
             <div className="absolute inset-0 bg-black bg-opacity-20 rounded-lg"></div>
           </div>
 
           {/* About Us Content */}
           <div>
-            <h2 className="text-3xl text-blue-600 font-bold mb-6">about Walkwise Shoe Store Services</h2>
+            <h2 className="text-3xl text-blue-600 font-bold mb-6">About Walkwise Shoe Store Services</h2>
             <p className="text-green-600 mb-6">
               At Walkwise, we’re your go-to destination for premium footwear. With a passion for quality and style, we offer a wide range of shoes for men, women, and kids, ensuring comfort, durability, and the latest trends for every step of your journey.
             </p>

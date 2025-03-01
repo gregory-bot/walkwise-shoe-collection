@@ -1527,7 +1527,7 @@ function ServiceDetails() {
                   {/* Color Selection */}
                   <div className="mb-2">
                     <label htmlFor={`color-${item.id}`} className="block text-sm font-medium text-gray-700">
-                      Color
+                      Colour
                     </label>
                     <select
                       id={`color-${item.id}`}
@@ -1535,11 +1535,14 @@ function ServiceDetails() {
                       onChange={(e) => setSelectedColor(e.target.value)}
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
                     >
-                      <option value="">Select color</option>
+                      <option value="">select colour</option>
                       <option value="Black">Black</option>
                       <option value="White">White</option>
+                      <option value="White">purple</option>
                       <option value="Red">Red</option>
+                      <option value="White">pink</option>
                       <option value="Blue">Blue</option>
+                      <option value="White">yellow</option>
                       <option value="Green">Green</option>
                     </select>
                   </div>

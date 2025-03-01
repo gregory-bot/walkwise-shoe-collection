@@ -15,6 +15,7 @@ const services = [
   { id: 8, name: "Formal Shoes" },
   { id: 9, name: "Sports Shoes" },
   { id: 10, name: "Custom Shoes" },
+  { id: 11, name: "Offers" },
 ];
 
 const SearchBar = ({ onSearch }) => {
@@ -65,7 +66,11 @@ const SearchBar = ({ onSearch }) => {
 
   const navigateToService = (serviceId) => {
     // Navigate to the service's page using the service ID
-    navigate(`/services/${serviceId}`);
+    if (serviceId === 11) {
+      navigate(`/offers`);
+    } else {
+      navigate(`/services/${serviceId}`);
+    }
   };
 
   return (

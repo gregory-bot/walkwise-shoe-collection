@@ -123,7 +123,7 @@ function Navbar() {
               className="nav-link"
             >
               Offers
-            </button> {/* Added Offers link */}
+            </button> 
           </div>
         </div>
       )}

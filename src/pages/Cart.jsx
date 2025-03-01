@@ -26,11 +26,11 @@ function Cart() {
   return (
     <div className="min-h-screen bg-gray-50 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-8">Your Cart</h1>
+        <h1 className="text-3xl font-bold mb-8" style={{ fontFamily: 'Courier New, monospace' }}>Your Cart</h1>
         
         {cartItems.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-600">Your cart is empty</p>
+            <p className="text-blue-600">your cart is empty🙂</p>
           </div>
         ) : (
           <div className="bg-white rounded-lg shadow-lg p-6">

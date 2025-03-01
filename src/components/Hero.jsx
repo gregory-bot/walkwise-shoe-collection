@@ -3,9 +3,9 @@ import Typewriter from "typewriter-effect";
 import SearchBar from "./SearchBar"; // Import SearchBar component
 
 const videos = [
-  "https://videos.pexels.com/video-files/5700368/5700368-uhd_2560_1440_24fps.mp4",
   "https://videos.pexels.com/video-files/29951359/12854089_2560_1440_25fps.mp4",
-  "https://videos.pexels.com/video-files/5699536/5699536-uhd_2560_1440_24fps.mp4",
+  "https://videos.pexels.com/video-files/5700368/5700368-uhd_2560_1440_24fps.mp4",
+
 ];
 
 function Hero() {
@@ -19,7 +19,7 @@ function Hero() {
 
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % videos.length);
-    }, 8000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, []);

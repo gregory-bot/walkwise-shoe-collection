@@ -15,7 +15,7 @@ function Cart() {
   };
 
   const handleEmailOrder = () => {
-    const subject = 'New Order from Jengi Laptops';
+    const subject = 'New Order from walkwise shoe store';
     const body = `Order Details:\n\n${cartItems
       .map((item) => `${item.title} - KSH ${item.price} (Size: ${item.size}, Color: ${item.color}, Rating: ${item.rating})`)
       .join('\n')}\n\nTotal: KSH ${total.toFixed(2)}`;

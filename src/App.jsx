@@ -8,6 +8,7 @@ import ServiceDetails from './pages/ServiceDetails';
 import { CartProvider } from './context/CartContext';
 import AboutUs from './components/AboutUs';
 import OffersPage from './pages/OffersPage'; // Correct import path
+import ChatWidget from './components/ChatWidget'; // Import ChatWidget
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/offers" element={<OffersPage />} /> {/* Corrected to use element prop */}
             <Route path="/services/:id" element={<ServiceDetails />} />
           </Routes>
+          <ChatWidget /> {/* Add ChatWidget */}
         </div>
       </CartProvider>
     </Router>

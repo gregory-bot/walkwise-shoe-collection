@@ -40,10 +40,10 @@ export default function ChatWidget() {
           'We offer a variety of kids shoes that are comfortable and durable. Browse our kids section for more.',
         'running shoes':
           'Our running shoes are designed for comfort and performance. Check out our latest collection.',
-        boots: 'Stay stylish and warm with our range of boots. Visit our website to see more.',
-        sandals:
+        'boots': 'Stay stylish and warm with our range of boots. Visit our website to see more.',
+        'sandals':
           'We have a variety of sandals perfect for any occasion. Check our catalog for more details.',
-        slippers:
+        'slippers':
           'Our slippers are comfortable and perfect for indoor use. Browse our collection online.',
         'formal shoes':
           'Find the perfect formal shoes for any occasion. Visit our website for more options.',
@@ -77,7 +77,7 @@ export default function ChatWidget() {
         userRequest.includes(greeting)
       );
       if (isGreeting) {
-        botResponse = 'Sasa🙂 How can we assist you today?';
+        botResponse = 'sasa🙂 How can we assist you today?';
       }
       // Check for service-related keywords
       else {
@@ -163,7 +163,7 @@ export default function ChatWidget() {
             >
               <div
                 className={`max-w-[75%] rounded-lg p-3 ${
-                  message.sender === 'user' ? 'bg-red-600 text-white' : 'bg-gray-100'
+                  message.sender === 'user' ? 'bg-green-500 text-white' : 'bg-gray-100'
                 }`}
               >
                 <p>{message.text}</p>
@@ -196,7 +196,7 @@ export default function ChatWidget() {
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              placeholder="Type a message..."
+              placeholder="type a message..."
               className="flex-1 min-w-0 border border-gray-300 rounded-lg p-2 focus:ring-red-500 focus:border-red-500"
             />
             <button

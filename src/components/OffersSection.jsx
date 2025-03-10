@@ -34,7 +34,7 @@ function OffersSection() {
       }`}
     >
       <h2
-        className="text-3xl font-bold bg-yellow-600 mb-4"
+        className="text-3xl font-bold bg-blue-600 mb-4"
         style={{ fontFamily: 'Courier New, monospace' }}
       >
         Offers upto 50% off
@@ -42,7 +42,7 @@ function OffersSection() {
       <div className="grid grid-cols-1 gap-4">
         {offers.map((offer, index) => (
           <div key={index} className="mb-4 relative">
-            <h3 className="text-xl text-red-600 font-semibold mb-2">{offer.title}</h3>
+            <h3 className="text-xl text-blue-600 font-semibold mb-2">{offer.title}</h3>
             <Carousel
               showThumbs={false}
               autoPlay

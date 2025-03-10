@@ -289,7 +289,7 @@ function OffersPage() {
                     </div>
                     <button
                       onClick={() => handleAddToCart(offer, selectedSize, selectedColor, rating)}
-                      className="bg-yellow-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
+                      className="bg-blue-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
                       disabled={!selectedSize || !selectedColor}
                     >
                       Add to Cart

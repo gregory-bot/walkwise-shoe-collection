@@ -69,6 +69,20 @@ export default function ChatWidget() {
         'womens',
       ];
 
+      const services = [
+        { id: 1, name: "Men's Sneakers" },
+        { id: 2, name: "Women's Heels" },
+        { id: 3, name: "Kids' Shoes" },
+        { id: 4, name: "Running Shoes" },
+        { id: 5, name: "Boots" },
+        { id: 6, name: "Sandals" },
+        { id: 7, name: "Slippers" },
+        { id: 8, name: "Formal Shoes" },
+        { id: 9, name: "Sports Shoes" },
+        { id: 10, name: "Custom Shoes" },
+        { id: 11, name: "Offers" },
+      ];
+
       const userRequest = newMessage.trim().toLowerCase();
       let botResponse = '';
 
@@ -85,9 +99,9 @@ export default function ChatWidget() {
           userRequest.includes(keyword)
         );
         if (matchedService) {
-          botResponse =
-            serviceResponses[matchedService] ||
-            `We have a great selection of ${matchedService}. check our website for more details!`;
+          botResponse = `We have a great selection of ${matchedService}. Here are some options:\n\n${services
+            .map((service) => service.name)
+            .join('\n')}\n\nCheck our website for more details!`;
         } else {
           botResponse =
             'I’m here to help! You can ask about our services like "Mens Shoes", "Womens Heels", or "Kids Shoes". Or check our website for more options.';

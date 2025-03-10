@@ -88,7 +88,7 @@ function Navbar() {
       {/* Mobile Navigation - Left Side */}
       {isMobile && (
         <div
-          className={`fixed top-0 left-0 h-full w-64 bg-orange-400 transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 left-0 h-full w-64 bg-blue-400 transform transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
           } z-50 mobile-menu`}
           style={{ width: '230px' }}

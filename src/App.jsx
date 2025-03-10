@@ -9,8 +9,11 @@ import { CartProvider } from './context/CartContext';
 import AboutUs from './components/AboutUs';
 import OffersPage from './pages/OffersPage'; // Correct import path
 import ChatWidget from './components/ChatWidget'; // Import ChatWidget
+import { useState } from 'react'; // Import useState
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
   return (
     <Router>
       <CartProvider>
@@ -25,7 +28,11 @@ function App() {
             <Route path="/offers" element={<OffersPage />} /> {/* Corrected to use element prop */}
             <Route path="/services/:id" element={<ServiceDetails />} />
           </Routes>
-          <ChatWidget /> {/* Add ChatWidget */}
+          <div className="fixed bottom-6 right-6 z-50">
+            <div className="flex flex-col gap-4 relative">
+              <ChatWidget /> {/* Add ChatWidget */}
+            </div>
+          </div>
         </div>
       </CartProvider>
     </Router>
